@@ -58,6 +58,7 @@ body{
   letter-spacing: 0.01em;
   padding: 0;
   color: var(--app-color);
+
 }
 @media (max-width: 992px) {
   .App .navbar-brand{
@@ -107,7 +108,7 @@ body{
 
 }
 .Board-module-board{
-    width: 350px;
+    width: 420px;
     height: 420px;
     display: grid;
     grid-template-rows: repeat(6, 1fr);
@@ -119,8 +120,26 @@ body{
   /* gap:5px;
   margin-top: 5px; */
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
+
+}
+
+.Board-module-board-hard{
+  width: 500px;
+  height: 370px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.board-row-hard{
+/* gap:5px;
+margin-top: 5px; */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
 
 }
 .cube{
@@ -392,4 +411,26 @@ small{
   width: 100%;
   padding: 10px;
   
+}
+
+.jumbotron{
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.btn.btn-primary.btn-lg {
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color:var(--app-color);
+  color: var(--hover-color);
+}
+
+#navbar-brand-landing {
+  font-size: 33px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  padding: 0;
+  color: var(--app-color);
+  margin-left: 47%
 }

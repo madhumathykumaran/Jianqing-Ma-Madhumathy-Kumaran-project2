@@ -1,8 +1,8 @@
 import { toast } from 'react-toastify';
-import words from './words.js';
-import totalWords from './total-words.js';
+import words from '../../words.js';
+import totalWords from '../../total-words-medium.js';
 import { Modal } from  'bootstrap';
-import statsjson from './stats.json';
+import statsjson from '../../stats.json';
 
   let CurBox=0;
   let CurRow=1;
@@ -30,7 +30,7 @@ import statsjson from './stats.json';
   }
 
   export function buttonclicked(e) {
-    if(CurBox<5 && CurRow<7){
+    if(CurBox<6 && CurRow<7){
       console.log("---->"+e.target.value);
       const allWithClass = Array.from(
         document.getElementsByClassName('line'+CurRow)
@@ -42,7 +42,7 @@ import statsjson from './stats.json';
   }
 
   export function buttonclickedd(e) {
-    if(CurBox<5){
+    if(CurBox<6){
       //console.log(CurRow);
       const allWithClass = Array.from(
         document.getElementsByClassName('line'+CurRow)
@@ -83,7 +83,7 @@ import statsjson from './stats.json';
       document.getElementsByClassName('line'+CurRow)
     );
 
-    if(CurBox<5){
+    if(CurBox<6){
       if(CurRow>6){
         return;
       }
@@ -104,15 +104,15 @@ import statsjson from './stats.json';
 
       }else{
         console.log("wrong");
-        if(totalWords.includes(typeWord)){
-          console.log("continue........");
-        }else{
-          console.log("return..Not in Wordlist");
+        // if(totalWords.includes(typeWord)){
+        //   console.log("continue........");
+        // }else{
+        //   console.log("return..Not in Wordlist");
 
-          toast.error('Not in Wordlist!', { position: "top-center", autoClose: 500, hideProgressBar: true, 
-          closeOnClick: true, pauseOnHover: false, draggable: true, progress: undefined});
-          return;
-        }        
+        //   toast.error('Not in Wordlist!', { position: "top-center", autoClose: 500, hideProgressBar: true, 
+        //   closeOnClick: true, pauseOnHover: false, draggable: true, progress: undefined});
+        //   return;
+        // }        
       }
 
       let tempGuess=guessword;
@@ -123,7 +123,7 @@ import statsjson from './stats.json';
             r= document.querySelector('[data-theme=dark]');
         }
       var rs = getComputedStyle(r);
-      for(let i=0;i<5;i++){
+      for(let i=0;i<6;i++){
         if(typeWord.charAt(i)===guessword.charAt(i)){
           allWithClass[i].style.backgroundColor = "var(--color-correct)";
           tempGuess = tempGuess.split('');
@@ -138,7 +138,7 @@ import statsjson from './stats.json';
         }
         
       }
-      for(let i=0;i<5;i++){
+      for(let i=0;i<6;i++){
         
         if(temptype.charAt(i)!==' ') {
           if(tempGuess.indexOf(typeWord.charAt(i))>-1){
@@ -163,7 +163,7 @@ import statsjson from './stats.json';
           //console.log("temptype:",temptype);
         }
       }
-      for(let i=0;i<5;i++){
+      for(let i=0;i<6;i++){
         if(temptype.charAt(i)==='-'){
           changeKeyColor(typeWord.charAt(i), "--color-absent");
           allWithClass[i].style.backgroundColor = "var(--color-absent)";
@@ -255,7 +255,7 @@ import statsjson from './stats.json';
         document.documentElement.setAttribute("color-blind", "no");
         document.getElementById('highContrastMode').checked=false;
     }
-    
+     
     const mode=localStorage.getItem("mode");
     if(mode==="hard"){
       document.getElementById('hardModeSwitch').checked=true;
@@ -265,19 +265,23 @@ import statsjson from './stats.json';
 
     const date=localStorage.getItem("date");
     var today = new Date().toLocaleDateString();
-    if(date===today){
-      console.log("today:"+today);
-      guessword=localStorage.getItem("guessword");
-      console.log("guessword:"+guessword);
-    }else{
-      console.log("set date:"+date);
-      localStorage.setItem("date", today);
-
-      const random = Math.floor(Math.random() * words.length);
-      guessword=words[random].toUpperCase();
+    const random = Math.floor(Math.random() * totalWords.length);
+      guessword=totalWords[random].toUpperCase();
       console.log("guessword:"+guessword);
       localStorage.setItem("guessword", guessword);
-    }
+    // if(date===today){
+    //   console.log("today:"+today);
+    //   guessword=localStorage.getItem("guessword");
+    //   console.log("guessword:"+guessword);
+    // }else{
+    //   console.log("set date:"+date);
+    //   localStorage.setItem("date", today);
+
+    //   const random = Math.floor(Math.random() * totalWords.length);
+    //   guessword=totalWords[random].toUpperCase();
+    //   console.log("guessword:"+guessword);
+    //   localStorage.setItem("guessword", guessword);
+    // }
 
     //guessword="APPLE";//comment later
     
