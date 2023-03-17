@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import Landingpage from './components/Landingpage/Landingpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
