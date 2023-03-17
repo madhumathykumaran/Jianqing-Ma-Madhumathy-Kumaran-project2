@@ -280,28 +280,28 @@ import statsjson from '../../stats.json';
     }
   }
 
-  // function setTimeinModal() {
-  //   const tomorrow  = new Date(); 
-	//   tomorrow.setDate(tomorrow.getDate() + 1);
-  //   tomorrow.setHours(0, 0, 0);
-  //   var countDownDate = tomorrow.getTime();
+  function setTimeinModal() {
+    const tomorrow  = new Date(); 
+	  tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0);
+    var countDownDate = tomorrow.getTime();
 
-  //   var x = setInterval(function() {
-  //   var now = new Date().getTime();
-  //   var distance = countDownDate - now;
+    var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
     
-  //   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  //   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  //   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  //   document.getElementById("nextGameTimer").innerHTML = hours + ":"+ minutes + ":" +seconds;
+    document.getElementById("nextGameTimer").innerHTML = hours + ":"+ minutes + ":" +seconds;
   
-  //   if (distance < 0) {
-  //     clearInterval(x);
-  //     document.getElementById("nextGameTimer").innerHTML = "00:00:00";
-  //   }
-  // }, 1000);
-  // }
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("nextGameTimer").innerHTML = "00:00:00";
+    }
+  }, 1000);
+  }
 
 
 
