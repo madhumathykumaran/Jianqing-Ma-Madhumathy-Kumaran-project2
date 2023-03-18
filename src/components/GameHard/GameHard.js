@@ -11,7 +11,7 @@ import { GiShare } from "react-icons/gi";
 import { GoThreeBars } from "react-icons/go";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import * as myfn from './AppFunctions.js';
+import * as myfn from './AppFunctions';
 
 function GameHard() {
   const dataFetchedRef = useRef(false);
@@ -73,14 +73,7 @@ function GameHard() {
                   </ul>
                   
                 </div>
-                <div className="offcanvas-footer">
-                  <small className="copyright text-center">
-                    Made with ❤️ | Website developed by S Subodh
-                  </small><br></br>
-                  <small>
-                    This website is developed only for Educational/Learning purpose
-                  </small>
-                </div>
+                
               </div>
             </div>
           </nav> 
@@ -180,22 +173,11 @@ function GameHard() {
                     FAQ
                 </div>
               </div>
-              <div>
-                <small>
-                Made with ❤️ | Website developed by S Subodh
-                </small>
-              </div>
+              
               
 
             </div>
-            {/* <div className="modal-footer">
-              <small className="copyright text-center">
-                  Made with ❤️ | Website developed by S Subodh
-              </small>
-              <small>
-                This website is developed only for Educational purpose
-              </small>
-            </div> */}
+            
           </div>
         </div>
       </div>
@@ -360,11 +342,7 @@ function GameHard() {
               <div className="mt-1">
                 NEXT WORDLE IN <span id='nextGameTimer'></span>
               </div>
-              <div className="mt-1 stats-footer">
-                    <button className="button spellingBeeYellow" type="button">Play Spelling Bee <GiBee/></button>
-                    <button className="button share correct" type="button">Share <GiShare/></button>
-                  
-              </div>
+              
               
 
             </div>
