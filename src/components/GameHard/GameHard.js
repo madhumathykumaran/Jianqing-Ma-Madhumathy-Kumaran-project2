@@ -46,11 +46,8 @@ function GameHard() {
         {/* <header> */}
           <nav className="navbar navbar-light fixed-top">
             <div className="container-fluid">
-              <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-                {/* <span className="navbar-toggler-icon"></span> */}
-                <GoThreeBars/>
-              </button>
-              <a className="navbar-brand" href="#">Wordle</a>
+              
+              <a id="navbar-brand-landing" >Wordle</a>
               <div className="side-buttons">
                 <button className="side-buttons-icons" type="button" data-bs-toggle="modal" data-bs-target="#how-modal">
                   <BsFillQuestionCircleFill size={30}/>
@@ -59,34 +56,7 @@ function GameHard() {
                   <AiFillSetting size={30}/>
                 </button>
               </div>
-              <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                <div className="offcanvas-header">
-                  <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Games</h5>
-                  <button type="button" className="dismiss-button" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <AiOutlineClose/>
-                  </button>
-                </div>
-                <div className="offcanvas-body">
-                  <ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
-                    <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Archive</a>
-                    </li>
-                  
-                  </ul>
-                  
-                </div>
-                <div className="offcanvas-footer">
-                  <small className="copyright text-center">
-                    Made with ❤️ | Website developed by S Subodh
-                  </small><br></br>
-                  <small>
-                    This website is developed only for Educational/Learning purpose
-                  </small>
-                </div>
-              </div>
+             
             </div>
           </nav> 
 
@@ -106,21 +76,7 @@ function GameHard() {
               </button> */}
             </div>
             <div className="modal-body">
-              <div className="settings-options">
-                <div className="settings-options-texts">
-                  <div>
-                    Hard Mode
-                  </div>
-                  <div>
-                    <small>
-                      Any revealed hints must be used in subsequent guesses
-                    </small>
-                  </div>
-                </div>
-                <div className="form-check form-switch">
-                  <input className="form-check-input" type="checkbox" onClick={myfn.hardmodeButton} id="hardModeSwitch"/>
-                </div>
-              </div>
+              
 
               <div className="settings-options">
                 <div className="settings-options-texts">
@@ -185,22 +141,10 @@ function GameHard() {
                     FAQ
                 </div>
               </div>
-              <div>
-                <small>
-                Made with ❤️ | Website developed by S Subodh
-                </small>
-              </div>
               
 
             </div>
-            {/* <div className="modal-footer">
-              <small className="copyright text-center">
-                  Made with ❤️ | Website developed by S Subodh
-              </small>
-              <small>
-                This website is developed only for Educational purpose
-              </small>
-            </div> */}
+            
           </div>
         </div>
       </div>
@@ -267,14 +211,7 @@ function GameHard() {
               
               </div>
 
-              <div>
-                <div className="how-footer">
-                  A new puzzle is released daily at midnight. If you haven’t already, you can <a href = "#">sign up</a> for our daily reminder email.
-                </div>
-                <div className="how-footer">
-                  Have feedback? Email us at <a href = "#">xyz@xyz.com</a>.
-                </div>
-              </div>
+              
 
             </div>
           </div>
