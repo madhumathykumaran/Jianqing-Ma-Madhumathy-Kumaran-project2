@@ -45,11 +45,8 @@ function Game() {
         {/* <header> */}
           <nav className="navbar navbar-light fixed-top">
             <div className="container-fluid">
-              <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-                {/* <span className="navbar-toggler-icon"></span> */}
-                <GoThreeBars/>
-              </button>
-              <a className="navbar-brand" href="#">Wordle</a>
+              
+              <a id="navbar-brand-landing" >Wordle</a>
               <div className="side-buttons">
                 <button className="side-buttons-icons" type="button" data-bs-toggle="modal" data-bs-target="#how-modal">
                   <BsFillQuestionCircleFill size={30}/>
@@ -77,14 +74,7 @@ function Game() {
                   </ul>
                   
                 </div>
-                <div className="offcanvas-footer">
-                  <small className="copyright text-center">
-                    Made with ❤️ | Website developed by S Subodh
-                  </small><br></br>
-                  <small>
-                    This website is developed only for Educational/Learning purpose
-                  </small>
-                </div>
+                
               </div>
             </div>
           </nav> 
@@ -184,22 +174,11 @@ function Game() {
                     FAQ
                 </div>
               </div>
-              <div>
-                <small>
-                Made with ❤️ | Website developed by S Subodh
-                </small>
-              </div>
+              
               
 
             </div>
-            {/* <div className="modal-footer">
-              <small className="copyright text-center">
-                  Made with ❤️ | Website developed by S Subodh
-              </small>
-              <small>
-                This website is developed only for Educational purpose
-              </small>
-            </div> */}
+            
           </div>
         </div>
       </div>
@@ -263,14 +242,7 @@ function Game() {
               
               </div>
 
-              <div>
-                <div className="how-footer">
-                  A new puzzle is released daily at midnight. If you haven’t already, you can <a href = "#">sign up</a> for our daily reminder email.
-                </div>
-                <div className="how-footer">
-                  Have feedback? Email us at <a href = "#">xyz@xyz.com</a>.
-                </div>
-              </div>
+              
 
             </div>
           </div>
