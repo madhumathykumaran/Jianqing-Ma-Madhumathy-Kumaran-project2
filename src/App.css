@@ -377,6 +377,8 @@ small{
 .spellingBeeYellow{
   background-color: var(--spellingBeeYellow);
   color: black;
+  margin-left: auto;
+  margin-right: auto;
 }
 .spellingBeeYellow:focus{
   background-color: var(--spellingBeeYellow);
@@ -433,4 +435,11 @@ small{
   padding: 0;
   color: var(--app-color);
   margin-left: 47%
+}
+
+.congrat{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }

@@ -11,10 +11,18 @@ import { GiShare } from "react-icons/gi";
 import { GoThreeBars } from "react-icons/go";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import * as myfn from './AppFunctions';
+import * as myfn from './AppFunctions.js';
+import { useNavigate } from 'react-router-dom';
+import Confetti from 'react-confetti'
 
 function GameHard() {
   const dataFetchedRef = useRef(false);
+  let navigate = useNavigate();
+  const onRestart = () => {
+    myfn.onWordChange();
+    let path = `/`; 
+    navigate(path);
+  };
   
   useEffect(() => {
     if (dataFetchedRef.current) return;
@@ -47,9 +55,6 @@ function GameHard() {
                 <button className="side-buttons-icons" type="button" data-bs-toggle="modal" data-bs-target="#how-modal">
                   <BsFillQuestionCircleFill size={30}/>
                 </button>
-                <button className="side-buttons-icons px-3" type="button" data-bs-toggle="modal" data-bs-target="#statistics-modal">
-                  <BsBarChartLineFill size={30}/>
-                </button>
                 <button className="side-buttons-icons" type="button" data-bs-toggle="modal" data-bs-target="#settings-modal">
                   <AiFillSetting size={30}/>
                 </button>
@@ -73,7 +78,14 @@ function GameHard() {
                   </ul>
                   
                 </div>
-                
+                <div className="offcanvas-footer">
+                  <small className="copyright text-center">
+                    Made with ❤️ | Website developed by S Subodh
+                  </small><br></br>
+                  <small>
+                    This website is developed only for Educational/Learning purpose
+                  </small>
+                </div>
               </div>
             </div>
           </nav> 
@@ -173,11 +185,22 @@ function GameHard() {
                     FAQ
                 </div>
               </div>
-              
+              <div>
+                <small>
+                Made with ❤️ | Website developed by S Subodh
+                </small>
+              </div>
               
 
             </div>
-            
+            {/* <div className="modal-footer">
+              <small className="copyright text-center">
+                  Made with ❤️ | Website developed by S Subodh
+              </small>
+              <small>
+                This website is developed only for Educational purpose
+              </small>
+            </div> */}
           </div>
         </div>
       </div>
@@ -196,42 +219,48 @@ function GameHard() {
               <div className="how-options">
                 <h3>How To Play</h3>
                 
-                <h5>Guess the Wordle in 6 tries.</h5>
+                <h5>Guess the Wordle in 5 tries.</h5>
 
                 <div className="bullets">
                   <ul>
-                    <li>Each guess must be a valid 5-letter word.</li>
+                    <li>Each guess must be a valid 7-letter word.</li>
                     <li>The color of the tiles will change to show how close your guess was to the word.</li>
                   </ul>
                 </div>
                 <div className="examples  mb-3">
                   <div>Examples</div>
                   <div className="how-row">
-                    <div className="cube exm correct col-2">W</div>
-                    <div className="cube exm col-2">E</div>
-                    <div className="cube exm col-2">A</div>
-                    <div className="cube exm col-2">R</div>
+                    <div className="cube exm correct col-2">L</div>
+                    <div className="cube exm col-2">U</div>
+                    <div className="cube exm col-2">C</div>
+                    <div className="cube exm col-2">I</div>
+                    <div className="cube exm col-2">D</div>
+                    <div className="cube exm col-2">L</div>
                     <div className="cube exm col-2">Y</div>
                   </div>
-                  <div>W is in the word and in the correct spot.</div>
+                  <div>L is in the word and in the correct spot.</div>
                 </div>
                 <div className="examples mb-3">
                   <div className="how-row">
-                    <div className="cube exm col-2">P</div>
-                    <div className="cube exm present col-2">I</div>
                     <div className="cube exm col-2">L</div>
-                    <div className="cube exm col-2">L</div>
+                    <div className="cube exm col-2">O</div>
+                    <div className="cube exm col-2">F</div>
+                    <div className="cube exm col-2">T</div>
+                    <div className="cube exm present col-2">E</div>
+                    <div className="cube exm col-2">R</div>
                     <div className="cube exm col-2">S</div>
                   </div>
-                  <div>I is in the word but in the wrong spot.</div>
+                  <div>E is in the word but in the wrong spot.</div>
                 </div>
                 <div className="examples mb-3">
                   <div className="how-row">
+                    <div className="cube exm col-2">L</div>
+                    <div className="cube exm absent col-2">U</div>
                     <div className="cube exm col-2">V</div>
                     <div className="cube exm col-2">A</div>
                     <div className="cube exm col-2">G</div>
-                    <div className="cube exm absent col-2">U</div>
                     <div className="cube exm col-2">E</div>
+                    <div className="cube exm col-2">S</div>
                   </div>
                   <div>U is not in the word in any spot.</div>
                 </div>
@@ -265,84 +294,17 @@ function GameHard() {
               <div className="statistics-options">
 
                 <div>
-                  <h5 className="modal-title" id="exampleModalLabel">STATISTICS</h5>
+                  <h5 className="modal-title" id="exampleModalLabel">Congratulations</h5>
                 </div>
-                <div className="stats-boxes">
-                  <div className="stats-box">
-                    <div className="stats-num">
-                      { statistics.TotalPlayed }
-                    </div>
-                    <div className="stats-text">
-                      Played
-                    </div>
-                  </div>
-
-                  <div className="stats-box">
-                    <div className="stats-num">
-                      { eval( (statistics.Win /statistics.TotalPlayed) *100) }
-                    </div>
-                    <div className="stats-text">
-                      Win %
-                    </div>
-                  </div>
-
-                  <div className="stats-box">
-                    <div className="stats-num">
-                      { statistics.Streak }
-                    </div>
-                    <div className="stats-text">
-                      Current Streak
-                    </div>
-                  </div>
-
-                  <div className="stats-box">
-                    <div className="stats-num">
-                      { statistics.MaxStreak }
-                    </div>
-                    <div className="stats-text">
-                      Max Streak
-                    </div>
-                  </div>
-
-                </div>
-
-                <div className="guessdiv mt-2 mb-1">
-                  <h6 className="stats-title" id="exampleModalLabel">GUESS DISTRIBUTION</h6>
-                  {/* <div className="noData">
-                    <p className="text-center">No Data</p>  
-                  </div> */}
-                  
-                  <div className="statsData">
-                  { 
-                  statistics.Guess.map((item,index) => (   
-                    <div className='statsData-box'>
-                      <div className='guess-num'>{index+1}</div>
-                      {
-                      item==0
-                      ?
-                      <div className='guess-val'>{item}</div>
-                      :
-                      <div className='guess-val guess-value'>{item}</div>
-                      }
-
-                    </div>
-                  ))
-                  }
-                  </div>  
-
-
-                  <div>
-
-                  </div>
-                                    
-                </div>
-
               </div>
-              
+              <ToastContainer/>
               <div className="mt-1">
                 NEXT WORDLE IN <span id='nextGameTimer'></span>
               </div>
-              
+              <div className="mt-1 stats-footer">
+                  <Confetti className="congrat"/>
+                  <button className="button spellingBeeYellow" data-bs-dismiss="modal" type="button" onClick={onRestart}>Start Over <GiBee/></button>
+              </div>
               
 
             </div>
@@ -444,7 +406,7 @@ function GameHard() {
           </div>
           <div className="btn btn-primary btn-lg" href="#" role="button" onClick={myfn.onWordChange}>Change Word</div>
           
-          <ToastContainer/>
+          {/* <ToastContainer/> */}
 
           
 
