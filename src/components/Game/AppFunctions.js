@@ -262,60 +262,33 @@ import statsjson from '../../stats.json';
     }else{
       document.getElementById('hardModeSwitch').checked=false;
     }
-
-    const date=localStorage.getItem("date");
-    var today = new Date().toLocaleDateString();
+    // const date=localStorage.getItem("date");
+    // var today = new Date().toLocaleDateString();
     const random = Math.floor(Math.random() * totalWords.length);
       guessword=totalWords[random].toUpperCase();
       console.log("guessword:"+guessword);
       localStorage.setItem("guessword", guessword);
-    // if(date===today){
-    //   console.log("today:"+today);
-    //   guessword=localStorage.getItem("guessword");
-    //   console.log("guessword:"+guessword);
-    // }else{
-    //   console.log("set date:"+date);
-    //   localStorage.setItem("date", today);
-
-    //   const random = Math.floor(Math.random() * totalWords.length);
-    //   guessword=totalWords[random].toUpperCase();
-    //   console.log("guessword:"+guessword);
-    //   localStorage.setItem("guessword", guessword);
-    // }
-
-    //guessword="APPLE";//comment later
-    
-    // statistics=localStorage.getItem("statistics");
-    // if(localStorage.getItem("statistics")==null){
-    //   localStorage.setItem("statistics",statsjson);
-    // }
-    // console.log("localStorage:statsjson:"+localStorage.getItem("statistics"));
-    setTimeinModal();
   }
 
-  function setTimeinModal() {
-    const tomorrow  = new Date(); 
-	  tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(0, 0, 0);
-    var countDownDate = tomorrow.getTime();
-
-    var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("nextGameTimer").innerHTML = hours + ":"+ minutes + ":" +seconds;
-  
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("nextGameTimer").innerHTML = "00:00:00";
+  export function onWordChange() {
+    const random = Math.floor(Math.random() * totalWords.length);
+    guessword=totalWords[random].toUpperCase();
+    console.log("guessword:"+guessword);
+    localStorage.setItem("guessword", guessword);
+    CurBox=0;
+    CurRow=1;
+    for(let i=1;i<7;i++){
+      const allWithClass = Array.from(document.getElementsByClassName('line'+i));
+      for (let i=0; i<6; i++){
+        allWithClass[i].innerHTML = "";
+        allWithClass[i].style.backgroundColor = "";
+      }
     }
-  }, 1000);
-
-
+    colorMap.forEach((value, key) => {
+      const keyDiv=document.getElementById(key);
+      keyDiv.style.backgroundColor="";
+    });
+    colorMap = new Map();
   }
 
 

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as myfn from '../Game/AppFunctions.js';
 import "./Landingpage.module.css"
 import { useNavigate } from 'react-router-dom';
+import '../../App.css';
 
 function Landingpage() {
 
@@ -179,11 +180,11 @@ function Landingpage() {
               <div className="how-options">
                 <h3>How To Play</h3>
                 
-                <h5>Guess the Wordle in 6 tries.</h5>
+                <h5>Guess the Word in 6 or 5 tries depending on difficulties you have selected.</h5>
 
                 <div className="bullets">
                   <ul>
-                    <li>Each guess must be a valid 5-letter word.</li>
+                    <li>Each guess must be a valid 7-letter or 6-letter word depending on difficulties you have selected.</li>
                     <li>The color of the tiles will change to show how close your guess was to the word.</li>
                   </ul>
                 </div>
@@ -201,12 +202,12 @@ function Landingpage() {
                 <div className="examples mb-3">
                   <div className="how-row">
                     <div className="cube exm col-2">P</div>
-                    <div className="cube exm present col-2">I</div>
+                    <div className="cube exm col-2">I</div>
                     <div className="cube exm col-2">L</div>
                     <div className="cube exm col-2">L</div>
-                    <div className="cube exm col-2">S</div>
+                    <div className="cube exm present col-2">S</div>
                   </div>
-                  <div>I is in the word but in the wrong spot.</div>
+                  <div>S is in the word but in the wrong spot.</div>
                 </div>
                 <div className="examples mb-3">
                   <div className="how-row">
@@ -236,17 +237,17 @@ function Landingpage() {
       </div>
       <div className="jumbotron">
         <h1 className="display-4">Hello, player!</h1>
-        <p className="lead">Wordle is a daily word game(Opens in a new tab) created by Josh Wardle, 
+        <p className="lead">Wordle is a daily word game created by Josh Wardle, 
         a Brooklyn-based software engineer who has developed something of a reputation as a crafter 
-        of(Opens in a new tab) interesting social experiments(Opens in a new tab). Every day, the 
+        of interesting social experiments. Every day, the 
         people of the internet are greeted with a fresh word puzzle that can only be solved — or not! — using
          a series of process-of-elimination clues.</p>
-        <hr class="my-4"></hr>
+        <hr className="my-4"></hr>
         <p>Please select difficulty level to start with.</p>
-        <p className="lead">
+        <div className="lead">
           <div className="btn btn-primary btn-lg" href="#" role="button" onClick={handleClickNormal}>Medium</div>
           <div className="btn btn-primary btn-lg" href="#" role="button" onClick={handleClickHard}>Hard</div>
-        </p>
+        </div>
       </div>
     </div>
   );
