@@ -103,16 +103,15 @@ import statsjson from '../../stats.json';
         CurRow=7;
 
       }else{
-        console.log("wrong");
-        // if(totalWords.includes(typeWord)){
-        //   console.log("continue........");
-        // }else{
-        //   console.log("return..Not in Wordlist");
+        if(totalWords.includes(typeWord)){
+          console.log("continue........");
+        }else{
+          console.log("return..Not in Wordlist");
 
-        //   toast.error('Not in Wordlist!', { position: "top-center", autoClose: 500, hideProgressBar: true, 
-        //   closeOnClick: true, pauseOnHover: false, draggable: true, progress: undefined});
-        //   return;
-        // }        
+          toast.error('Not in Wordlist!', { position: "top-center", autoClose: 500, hideProgressBar: true, 
+          closeOnClick: true, pauseOnHover: false, draggable: true, progress: undefined});
+          return;
+        }        
       }
 
       let tempGuess=guessword;
