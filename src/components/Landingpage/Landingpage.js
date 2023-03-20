@@ -8,7 +8,7 @@ import "./Landingpage.module.css"
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-function Landingpage() {
+function Landingpage(props) {
 
   let navigate = useNavigate();
   const handleClickHard = () => {
@@ -211,7 +211,7 @@ function Landingpage() {
         </div>
       </div>
       <div className="jumbotron">
-        <h1 className="display-4">Hello, player!</h1>
+        <h1 className="display-4">Hello, {props.name}!</h1>
         <p className="lead">Wordle is a daily word game created by Josh Wardle, 
         a Brooklyn-based software engineer who has developed something of a reputation as a crafter 
         of interesting social experiments. Every day, the 

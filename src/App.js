@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Landingpage/>} />
+        <Route exact path="/" element={<Landingpage name="players"/>} />
         <Route path="/game/normal" element={<Game/>} />
         <Route path="/game/hard" element={<GameHard/>} />
       </Routes>

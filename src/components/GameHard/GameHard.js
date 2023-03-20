@@ -99,22 +99,6 @@ function GameHard() {
               <div className="settings-options">
                 <div className="settings-options-texts">
                   <div>
-                    Hard Mode
-                  </div>
-                  <div>
-                    <small>
-                      Any revealed hints must be used in subsequent guesses
-                    </small>
-                  </div>
-                </div>
-                <div className="form-check form-switch">
-                  <input className="form-check-input" type="checkbox" onClick={myfn.hardmodeButton} id="hardModeSwitch"/>
-                </div>
-              </div>
-
-              <div className="settings-options">
-                <div className="settings-options-texts">
-                  <div>
                     Dark Theme
                   </div>
                   <div>
@@ -244,15 +228,6 @@ function GameHard() {
                   <div>U is not in the word in any spot.</div>
                 </div>
               
-              </div>
-
-              <div>
-                <div className="how-footer">
-                  A new puzzle is released daily at midnight. If you haven’t already, you can <a href = "#">sign up</a> for our daily reminder email.
-                </div>
-                <div className="how-footer">
-                  Have feedback? Email us at <a href = "#">xyz@xyz.com</a>.
-                </div>
               </div>
 
             </div>
