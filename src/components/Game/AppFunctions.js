@@ -228,14 +228,14 @@ import statsjson from '../../stats.json';
     
   }
 
-  export function hardmodeButton() {
-    const mode=localStorage.getItem("mode");
-    if(mode==="hard"){
-        localStorage.setItem("mode", "normal");
-    }else{
-        localStorage.setItem("mode", "hard");
-    }   
-  }
+  // export function hardmodeButton() {
+  //   const mode=localStorage.getItem("mode");
+  //   if(mode==="hard"){
+  //       localStorage.setItem("mode", "normal");
+  //   }else{
+  //       localStorage.setItem("mode", "hard");
+  //   }   
+  // }
 
   export function initialFunction() {
     const theme=localStorage.getItem("theme");
@@ -256,12 +256,12 @@ import statsjson from '../../stats.json';
         document.getElementById('highContrastMode').checked=false;
     }
      
-    const mode=localStorage.getItem("mode");
-    if(mode==="hard"){
-      document.getElementById('hardModeSwitch').checked=true;
-    }else{
-      document.getElementById('hardModeSwitch').checked=false;
-    }
+    // const mode=localStorage.getItem("mode");
+    // if(mode==="hard"){
+    //   document.getElementById('hardModeSwitch').checked=true;
+    // }else{
+    //   document.getElementById('hardModeSwitch').checked=false;
+    // }
     // const date=localStorage.getItem("date");
     // var today = new Date().toLocaleDateString();
     const random = Math.floor(Math.random() * totalWords.length);
