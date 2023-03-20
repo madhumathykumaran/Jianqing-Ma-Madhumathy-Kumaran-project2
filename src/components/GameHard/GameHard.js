@@ -251,7 +251,6 @@ function GameHard() {
                   <h5 className="modal-title" id="exampleModalLabel">Congratulations</h5>
                 </div>
               </div>
-              <ToastContainer/>
               <div className="mt-1">
                 NEXT WORDLE IN <span id='nextGameTimer'></span>
               </div>
@@ -360,7 +359,7 @@ function GameHard() {
           </div>
           <div className="btn btn-primary btn-lg" href="#" role="button" onClick={myfn.onWordChange}>Change Word</div>
           
-          {/* <ToastContainer/> */}
+          <ToastContainer/>
 
           
 
